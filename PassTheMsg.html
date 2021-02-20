@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass the Msg</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .mainBody {
+            background-color: darkolivegreen;
+            height: 500px;
+        }
+
+        .mainDiv {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 500px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body class="mainBody container">
+    <div class="bg-secondary mt-5 text-center mainDiv">
+        <h1 class="text-info">A Massage You Would Like to Pass</h1>
+        <input type="text" value="" class="form-control mt-3" id="text">
+        <button class="btn btn-success btn-lg mt-3" onclick="sendMsg()">Submit</button>
+        <h3 id="DeliveryMsg" class="mb-3"></h3>
+    </div>
+
+    <script>
+        const sendMsg = () => {
+            const input = document.getElementById('text').value;
+            if(input == ''){
+                document.getElementById('DeliveryMsg').innerText = "Please Write Somthing"
+                document.getElementById('DeliveryMsg').style.color = 'red'
+            }else{
+                document.getElementById('DeliveryMsg').innerText = "Last Massege Send"
+                document.getElementById('DeliveryMsg').style.color = 'darkturquoise'
+            }
+        }
+    </script>
+</body>
+
+</html>
