@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Counter</title>
+    <style>
+        .container {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        body {
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .btn {
+            display: block;
+            padding: 10px;
+            margin: 10px;
+            width: 220px;
+            border: none;
+            font-size: 40px;
+        }
+
+        .btn-Increment {
+            background-color: darkcyan;
+        }
+
+        .btn-Decrement {
+            background-color: darkgoldenrod;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1 id="counter">0</h1>
+    <button class="btn btn-Increment" onclick="mainFunction(true)" >Increment</button>
+    <button class="btn btn-Decrement" onclick="mainFunction(false)" >Decrement</button>
+
+    <script>
+        const mainFunction = (value) => {
+            const counterText = document.getElementById('counter')
+            const counterNuber = parseInt(counterText.innerText)
+            let counter = 0;
+
+            if (value == true) {
+                counter = counterNuber + 1;
+            } 
+            if (value == false && counterNuber > 0) {
+                counter = counterNuber - 1;
+            }
+            counterText.innerText = counter;
+        }
+    </script>
+</body>
+
+</html>
