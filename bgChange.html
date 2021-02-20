@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change BG</title>
+</head>
+
+<body id="mainBG">
+    <button onclick="random_rgba()">BG Change</button>
+    <input type="text" value="" id="input-field" oncopy="myFunction()">
+    <h4 id="demo"></h4>
+    <script>
+        const random_rgba = () => {
+            document.getElementById('mainBG').style.height = '500px';
+            var round = Math.round, random = Math.random, max = 255;
+            let rgbValue = `rgb(${round(random() * max)},${round(random() * max)},${round(random() * max)})`;
+            const bg = document.getElementById('mainBG')
+            bg.style.backgroundColor = rgbValue;
+            const rgbfield = document.getElementById('input-field')
+            rgbfield.value = rgbValue
+            document.getElementById("demo").innerHTML = ''
+        }
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "You copied this rgb!"
+        }
+    </script>
+</body>
+
+</html>
