@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bodyDiv {
+            text-align: center;
+            margin-top: 200px;
+        }
+        button{
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body id="bodyDiv">
+    <div>
+        <h1>Hex Code is <span id="colorValue"></span></h1>
+        <button id="changeBG">Click Me</button>
+    </div>
+    <script>
+        document.getElementById('changeBG').addEventListener('click', function () {
+            const hexValue = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+            let hexCode = "#"
+
+            for (let i = 0; i < 6; i++) {
+                let value = Math.floor(Math.random() * hexValue.length)
+                hexCode += hexValue[value]
+            }
+            document.getElementById('colorValue').innerText = hexCode;
+            const mainDiv = document.getElementById('bodyDiv')
+            mainDiv.style.cssText = `background-color: ${hexCode}; height:400px ;`
+            document.getElementById('changeBG').style.backgroundColor = hexCode
+
+        })
+    </script>
+
+</body>
+
+</html>
