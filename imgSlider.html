@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img Slider</title>
+    <style>
+        img {
+            display: none;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <img src="https://picsum.photos/1000/301">
+            <img src="https://picsum.photos/1000/302">
+            <img src="https://picsum.photos/1000/303">
+            <img src="https://picsum.photos/1000/304">
+            <img src="https://picsum.photos/1000/305">
+            <img src="https://picsum.photos/1000/306">
+        </div>
+    </div>
+
+    <script>
+        const img = document.querySelectorAll('img')
+        let i = 0;
+
+        setInterval(function () {
+
+            img.forEach((img, i) => {
+                img.style.display = 'none'
+            })
+
+            if (i == img.length) {
+                i = 0;
+            }
+
+            img[i].style.display = 'block'
+            i++;
+        }, 2000)
+    </script>
+</body>
+
+</html>
